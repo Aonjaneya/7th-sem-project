@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Diabetes prediction</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <header>
+        <h2>Input form</h2>
+    </header>
+    <section>
+        <div class = 'row'>
+        <nav>
+            <h2><u>Members:</u></h2>
+            <ul style="list-style-type:disc;">
+                <li>21051799</li><br>
+                <li>21052030</li><br>
+                <li>21052611</li><br>
+                <li>21052621</li><br>
+                <li>21052969</li>
+            </ul>
+        </nav>
+
+        <formlayout>
+            <div class='a'>TESTING</div>
+            <br>
+            <div class="form">
+                <div class="c">Enter Details:</div>
+                <form action="{{ url_for('form') }}" , method ="POST">
+                    
+                    <table style=" width: 80%">
+                        <tr>
+                            <th><label class="font">Pregnancies</label></th>
+                            <th><input class="box" type="number" id="pre" name="pre" required max="30"
+                                    placeholder="Enter 0 for Male"><br>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th><label class="font">Glucose (non-fasting)</label></th>
+                            <th><input class="box" type="number" id="glu" name="glu" required min="30" max="300"
+                                    placeholder=">30 & <300 mg/dL"></th>
+                        </tr>
+                        <tr>
+                            <th><label class="font">Blood Pressure (diastolic)</label></th>
+                            <th><input class="box" type="number" id="bp" name="bp" required min="30" max="200"
+                                    placeholder=">30 & <200 mmHg"></th>
+                        </tr>
+                        <tr>
+                            <th><label class="font">Skin Thickness</label></th>
+                            <th><input class="box" type="number" id="st" name="st" required min="3" max="80"
+                                    placeholder=">3 & <80 mm"></th>
+                        </tr>
+                        <tr>
+                            <th><label class="font">Insulin</label></th>
+                            <th><input class="box" type="number" id="ins" name="ins" required min="5" max="700"
+                                    placeholder=">5 & <700 U/mL"></th>
+                        </tr>
+                        <tr>
+                            <th><label class="font">Body mass index (BMI)</label></th>
+                            <th><input class="box" type="number" step="0.1" id="bmi" required name="bmi" min="2.0"
+                                    max="60.0" placeholder=">2.0 & <60.0 kg/m2"></th>
+                        </tr>
+                        <tr>
+                            <th><label class="font">Diabetes Pedigree Function</label><span class="tooltip"
+                                    data-tooltip="DiabetesPedigreeFunction scores the probability of diabetes based on family history.">?</span>
+                            </th>
+                            <th><input class="box" type="number" id="dpf" name="dpf" required step="0.001" min="0.005"
+                                    max="4.000" placeholder=">0.005 & <4.000"></th>
+                        </tr>
+                        <tr>
+                            <th><label class="font">Age</label></th>
+                            <th><input class="box" type="number" id="age" name="age" required min="5" max="120"
+                                    placeholder="Enter Age"></th>
+                        </tr>
+                    </table><br>
+                    <label for="options"><span class='font'>Choose a model:</span></label>
+<select name="options" id="options">
+    <option value="MPA">Marine Predator Algorithm</option>
+    <option value="GWO">Grey wolf optimization</option>
+    <option value="PSO">Particle swarm optimization</option>
+    <option value="SSA">Salp Swarm Algorithm</option>
+</select><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </formlayout>
+    </div>
+    </section>
+    <div class="footer">End</div>
+
+</body>
+
+</html>

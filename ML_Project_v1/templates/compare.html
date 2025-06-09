@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Diabetes prediction</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <header>
+        <h2>Table for different models</h2>
+    </header>
+
+    <section>
+        <div class='row'>
+            <nav>
+                <h2><u>Members:</u></h2>
+                <ul style="list-style-type:disc;">
+                    <li>21051799</li><br>
+                    <li>21052030</li><br>
+                    <li>21052611</li><br>
+                    <li>21052621</li><br>
+                    <li>21052969</li>
+                </ul>
+
+            </nav>
+            <formlayout>
+                <div class='a'>Comparison:</div><br>
+                <table class="custom-table">
+                    <tr class="font">
+                        <th>Model name</th>
+                        <th>Specificity</th>
+                        <th>Sensitivity</th>
+                        <th>Prevalence</th>
+                        <th>f1 score</th>
+                        <th>Accuracy</th>
+                    </tr>
+                    <tr>
+                        <td>MPA</td>
+                        <td>{{specificity_MPA}}</td>
+                        <td>{{sensitivity_MPA}}</td>
+                        <td>{{prevalence_MPA}}</td>
+                        <td>{{f1_score_MPA}}</td>
+                        <td>{{accuracy_MPA}}</td>
+                    </tr>
+                    <tr>
+                        <td>PSO</td>
+                        <td>{{specificity_PSO}}</td>
+                        <td>{{sensitivity_PSO}}</td>
+                        <td>{{prevalence_PSO}}</td>
+                        <td>{{f1_score_PSO}}</td>
+                        <td>{{accuracy_PSO}}</td>
+                    </tr>
+                    <tr>
+                        <td>GWO</td>
+                        <td>{{specificity_GWO}}</td>
+                        <td>{{sensitivity_GWO}}</td>
+                        <td>{{prevalence_GWO}}</td>
+                        <td>{{f1_score_GWO}}</td>
+                        <td>{{accuracy_GWO}}</td>
+                    </tr>
+                    <tr>
+                        <td>SSA</td>
+                        <td>{{specificity_SSA}}</td>
+                        <td>{{sensitivity_SSA}}</td>
+                        <td>{{prevalence_SSA}}</td>
+                        <td>{{f1_score_SSA}}</td>
+                        <td>{{accuracy_SSA}}</td>
+                    </tr>
+
+                </table>
+                <form action='/' , method='post'>
+                    <input type="submit" value="Next">
+                </form>
+
+            </formlayout>
+        </div>
+    </section>
+
+    <div class="footer">End</div>
+
+</body>
+
+</html>

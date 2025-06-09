@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Diabetes prediction</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <header>
+        <h2>Diabetes Prediction Model</h2>
+    </header>
+
+    <section>
+        <div class='row'>
+            <nav>
+                <h2><u>Members:</u></h2>
+                <ul style="list-style-type:disc;">
+                    <li>21051799</li><br>
+                    <li>21052030</li><br>
+                    <li>21052611</li><br>
+                    <li>21052621</li><br>
+                    <li>21052969</li>
+                </ul>
+
+            </nav>
+
+            <formlayout>
+                <div class='a'>TESTING</div>
+                <p class = 'b'>Diabetes Prediction using Random Forest Classifier and hyperparamter optimization using : <br>
+                <ol>
+                    <li>Marine Predator Algorithm</li>
+                    <li>Grey wolf Optimization</li>
+                    <li>Particle swarm optimization</li>
+                    <li>Salp Swarm Algorithm</li>
+                </ol>
+                </p>
+                <form method="post" action="/">
+                <label class="container">Compare all models
+                    <input type="radio" checked="checked" name="option" value="compare" id="compare" required>
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Input values
+                    <input type="radio" name="option" value="input" id="input">
+                    <span class="checkmark"></span>
+                </label>
+                <input type="submit" value="Next">
+                </form>
+            </formlayout>
+        </div>
+    </section>
+
+    <div class="footer">End</div>
+
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Diabetes prediction</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <header>
+        <h2>{{ model_name }}</h2>
+    </header>
+    
+    <section>
+        <div class = 'row'>
+        <nav>
+            <h2><u>Members:</u></h2>
+            <ul style="list-style-type:disc;">
+                <li>21051799</li><br>
+                <li>21052030</li><br>
+                <li>21052611</li><br>
+                <li>21052621</li><br>
+                <li>21052969</li>
+            </ul>
+        </nav>
+
+        <formlayout>
+            <div class='a'>TESTING</div>
+            <div class='b'><br>
+                Model Accuracy = {{Test_Acc}}%
+            </div>
+            <br>
+            <br>
+            <h2>You are not diabetic. Keep it up!</h2><br><br>
+            <p>
+            <h2>Here's our evaluation:</h2><br>
+            {% if glu %}
+            <span class="circle green-circle"></span><span class="font">Glucose: </span><span
+                class="right-mar">{{glu_v}}mg/dL , Normal: 80-125mg/dL</span><br>
+            {% else %}
+            <span class="circle red-circle"></span><span class="font">Glucose: </span><span class="right-mar">{{glu_v}}mg/dL
+                , Normal: 80-125mg/dL</span><br>
+            {% endif %}
+
+            {% if bp %}
+            <span class="circle green-circle"></span><span class="font">Blood Pressure (diastolic): </span><span
+                class="right-mar">{{bp_v}}mmHg , Normal: 60-80mmHg</span><br>
+            {% else %}
+            <span class="circle red-circle"></span><span class="font">Blood Pressure (diastolic): </span><span
+                class="right-mar">{{bp_v}}mmHg , Normal: 60-80mmHg</span><br>
+            {% endif %}
+
+            {% if st %}
+            <span class="circle green-circle"></span><span class="font">Skin Thickness: </span><span
+                class="right-mar">{{st_v}}mm , Normal: 10-26mm</span><br>
+            {% else %}
+            <span class="circle red-circle"></span><span class="font">Skin thickness: </span><span
+                class="right-mar">{{st_v}}mm , Normal: 10-26mm</span><br>
+            {% endif %}
+
+            {% if ins %}
+            <span class="circle green-circle"></span><span class="font">Insulin: </span><span
+                class="right-mar">{{ins_v}}U/mL , Normal: 30-300U/mL</span><br>
+            {% else %}
+            <span class="circle red-circle"></span><span class="font">Insulin: </span><span class="right-mar">{{ins_v}}U/mL
+                , Normal: 30-300U/mL</span><br>
+            {% endif %}
+
+            {% if bmi %}
+            <span class="circle green-circle"></span><span class="font">BMI: </span><span class="right-mar">{{bmi_v}}kg/m2 ,
+                Normal: 18.5-24.9kg/m2</span><br>
+            {% else %}
+            <span class="circle red-circle"></span><span class="font">BMI: </span><span class="right-mar">{{bmi_v}}kg/m2 ,
+                Normal: 18.5-24.9kg/m2</span><br>
+            {% endif %}
+
+            {% if dpf %}
+            <span class="circle green-circle"></span><span class="font">Diabetes Pedigree Function: </span><span
+                class="right-mar">{{dpf_v}} , Normal: 0.08-0.8</span><br>
+            {% else %}
+            <span class="circle red-circle"></span><span class="font">Diabetes Pedigree Function: </span><span
+                class="right-mar">{{dpf_v}} , Normal: 0.08-0.8</span><br>
+            {% endif %}
+
+            <br><br>
+            </p>
+            <div class = "b">Try Other models:</div><br>
+            <form action='/' , method='post'>
+                <label for="options"><span class='font'>Choose a model:</span></label>
+<select name="options" id="options">
+<option value="MPA">Marine Predator Algorithm</option>
+<option value="GWO">Grey wolf optimization</option>
+<option value="PSO">Particle swarm optimization</option>
+<option value="SSA">Salp Swarm Algorithm</option>
+</select>
+<input type="submit" value="Try">
+</form>
+        </formlayout>
+    </div>
+    </section>
+    <div class="footer">Thank you</div>
+
+</body>
+
+</html>
